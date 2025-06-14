@@ -1,0 +1,13 @@
+[Unit]
+Description=noVNC Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/share/novnc/utils/novnc_proxy --vnc localhost:5900 --listen 8080
+Restart=on-failure
+RestartSec=10
+User=mini
+
+[Install]
+WantedBy=multi-user.target

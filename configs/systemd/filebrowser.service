@@ -1,0 +1,14 @@
+[Unit]
+Description=Filebrowser Service
+After=network.target
+
+[Service]
+Type=simple
+User=mini
+ExecStart=/usr/local/bin/filebrowser -a 0.0.0.0 -p 8081 -r /home/mini/files -d /home/mini/filebrowser.db
+WorkingDirectory=/home/mini
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

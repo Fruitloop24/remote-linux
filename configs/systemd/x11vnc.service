@@ -1,0 +1,13 @@
+[Unit]
+Description=X11 VNC Server
+After=display-manager.service network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/x11vnc -display :0 -rfbauth /home/mini/.vnc/passwd -forever -shared -rfbport 5900 -scale 0.9 -speeds lan -noxdamage -ncache 10 -quiet
+Restart=on-failure
+RestartSec=10
+User=mini
+
+[Install]
+WantedBy=multi-user.target

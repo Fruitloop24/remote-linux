@@ -1,0 +1,13 @@
+tunnel: a88b31fc-1833-4c7a-9e9c-365d9997be1e
+credentials-file: /home/mini/.cloudflared/a88b31fc-1833-4c7a-9e9c-365d9997be1e.json
+ingress:
+  - hostname: linux-remote.panacea-tech.net
+    service: http://127.0.0.1:80
+    originRequest:
+      noTLSVerify: true
+      httpHostHeader: "linux-remote.panacea-tech.net"
+  - hostname: linux-term.panacea-tech.net
+    service: http://127.0.0.1:7681
+  - hostname: linux-files.panacea-tech.net
+    service: http://127.0.0.1:80
+  - service: http_status:404
